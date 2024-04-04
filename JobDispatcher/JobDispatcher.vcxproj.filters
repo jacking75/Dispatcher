@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
     <Filter Include="G.O.D">
       <UniqueIdentifier>{0bfdc06c-8390-4001-b7b7-2df0e69e7d83}</UniqueIdentifier>
     </Filter>
@@ -13,12 +9,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Job.h">
       <Filter>G.O.D</Filter>
     </ClInclude>
@@ -40,18 +30,16 @@
     <ClInclude Include="Runnable.h">
       <Filter>G.O.D</Filter>
     </ClInclude>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="DispatcherTest.h" />
+    <ClInclude Include="JobQueue.h">
+      <Filter>G.O.D</Filter>
+    </ClInclude>
+    <ClInclude Include="AsyncExecutable.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="DispatcherTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Timer.cpp">
-      <Filter>G.O.D</Filter>
-    </ClCompile>
-    <ClCompile Include="STLAllocator.cpp">
       <Filter>G.O.D</Filter>
     </ClCompile>
     <ClCompile Include="ThreadLocal.cpp">
@@ -60,5 +48,7 @@
     <ClCompile Include="Runnable.cpp">
       <Filter>G.O.D</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
 </Project>

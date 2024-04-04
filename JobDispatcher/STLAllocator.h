@@ -2,6 +2,7 @@
 
 #include <inttypes.h>
 #include <stdlib.h>
+//#include <stdio.h>
 #include "ThreadLocal.h"
 
 #define _ASSERT_CRASH(expr) \
@@ -70,7 +71,15 @@ private:
 class LocalMemoryPool
 {
 public:
-	LocalMemoryPool();
+	LocalMemoryPool()
+	{
+		for (int i = 0; i < MAX_POOL_SIZE; ++i)
+		{
+			mAllocCountTable[i] = 0;
+			mFixedSizeMemoryPool[i].SetFixedAllocSize((i + 1) * ALLOC_GRANULARITY);
+		}
+
+	}
 
 	void* Allocate(size_t size)
 	{
@@ -100,7 +109,15 @@ public:
 		}
 	}
 
-	void PrintAllocationStatus();
+	void PrintAllocationStatus()
+	{
+		for (int i = 0; i < MAX_POOL_SIZE; ++i)
+		{
+			if (mAllocCountTable[i] > 0)
+				printf("SIZE: %d, Allocation Count: %d\n", (i + 1) * ALLOC_GRANULARITY, (int)mAllocCountTable[i]);
+		}
+	}
+
 
 private:
 
