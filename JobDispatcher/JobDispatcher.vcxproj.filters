@@ -36,7 +36,9 @@
     <ClInclude Include="JobQueue.h">
       <Filter>G.O.D</Filter>
     </ClInclude>
-    <ClInclude Include="AsyncExecutable.h" />
+    <ClInclude Include="AsyncExecutable.h">
+      <Filter>G.O.D</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Timer.cpp">

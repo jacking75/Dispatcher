@@ -1,10 +1,11 @@
 #pragma once
 
+#include "STLAllocator.h"
+#include "Job.h"
+
 #include <chrono>
 #include <vector>
 #include <queue>
-#include "STLAllocator.h"
-#include "Job.h"
 
 
 class AsyncExecutable;
@@ -34,17 +35,17 @@ typedef std::chrono::high_resolution_clock Clock;
 
 class Timer
 {
-public:
-	
+public:	
 	Timer();
 	
 	void PushTimerJob(AsyncExecutable* obj, uint32_t after, JobEntry* task);
 	
 	void DoTimerJob();
 
+
 private:
-	
 	int64_t GetCurrentTick();
+	
 
 	Clock::time_point		mBeginTickPoint;
 	TimerJobPriorityQueue	mTimerJobQueue;

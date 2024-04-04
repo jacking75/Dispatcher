@@ -39,7 +39,6 @@ public:
 		mRefCount.fetch_sub(1);
 	}
 
-private:
 	/// Push a task into Job Queue, and then Execute tasks if possible
 	void DoTask(JobEntry* task)
 	{
@@ -85,6 +84,8 @@ private:
 		}
 	}
 
+
+private:	
 	/// Execute all tasks registered in JobQueue of this dispatcher
 	void Flush()
 	{
@@ -110,5 +111,5 @@ private:
 	/// should not release this object when it is in the dispatcher
 	std::atomic<int32_t> mRefCount;
 
-	friend class Timer;
+	//friend class Timer;
 };
